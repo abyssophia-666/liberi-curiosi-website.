@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Collegium | Liberi Curiosi</title>
+
+  <meta
+    name="description"
+    content="Collegium by Liberi Curiosi is coming soon."
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <header class="site-header">
+
+    <a class="brand" href="index.html">
+      <img
+        src="assets/libericuriosiLogo.png"
+        alt="Liberi Curiosi"
+        class="brand-logo"
+      />
+
+      <div class="brand-name">
+        <span>LIBERI</span>
+        <span>CURIOSI</span>
+      </div>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="index.html#philosophy">About</a>
+      <a href="founder.html">Founder</a>
+      <a href="index.html#liberi">Liberi</a>
+      <a href="collegium.html" aria-current="page">Collegium</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <a href="index.html#liberi" class="nav-enter">
+      Enter
+    </a>
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+  </header>
+
+
+  <main>
+
+    <section class="coming-soon-page">
+
+      <div class="coming-soon-content">
+
+        <p class="eyebrow">
+          ✦ COLLEGIUM
+        </p>
+
+        <h1>
+          Coming
+          <span>Soon!</span>
+        </h1>
+
+        <p class="coming-soon-lead">
+          A gathering place for families who believe learning
+          and community belong together.
+        </p>
+
+        <div class="waitlist-box">
+
+          <p class="waitlist-label">
+            BE AMONG THE FIRST TO KNOW
+          </p>
+
+          <h2>
+            Join the Collegium waitlist.
+          </h2>
+
+          <p>
+            Receive Collegium updates, early announcements,
+            and news as we prepare to open our doors.
+          </p>
+
+          <form
+            id="collegiumWaitlist"
+            class="waitlist-form"
+            action="https://assets.mailerlite.com/jsonp/2618912/forms/197899436976768760/subscribe"
+            method="POST"
+            target="mailerLiteFrame"
+            >
+
+            <input
+              type="hidden"
+              name="subject"
+              value="Collegium Waitlist"
+            />
+
+            <input
+              type="hidden"
+              name="signup_type"
+              value="Collegium Waitlist / Newsletter"
+            />
+
+            <div class="waitlist-fields">
+
+              <input
+                type="email"
+                name="fields[email]"
+                placeholder="Your email address"
+                aria-label="Email address"
+                autocomplete="email"
+                required
+                />
+
+              <button
+                type="submit"
+                class="button button-secondary"
+              >
+                Join Waitlist
+              </button>
+
+            </div>
+        
+
+
+            <label class="newsletter-consent">
+            <input
+                type="checkbox"
+                name="newsletter_consent"
+                value="yes"
+                required
+            />
+
+            <span>
+                I agree to receive Collegium and Liberi Curiosi
+                updates by email. I can unsubscribe at any time.
+            </span>
+            </label>
+          </form>
+        <iframe
+            name="mailerLiteFrame"
+            id="mailerLiteFrame"
+            style="display: none;"
+            ></iframe>
+        <input
+            type="hidden"
+            name="ml-submit"
+            value="1"
+            />
+
+            <input
+            type="hidden"
+            name="anticsrf"
+            value="true"
+            />
+
+          <div
+            class="waitlist-success"
+            id="waitlistSuccess"
+            hidden
+          >
+
+            <p class="eyebrow">
+              ✦ WELCOME TO THE LIST
+            </p>
+
+            <h3>You're on the list.</h3>
+
+            <p>
+              Thank you for your interest in Collegium.
+              We'll keep you informed as we get closer to launch.
+            </p>
+
+            <a
+              href="index.html"
+              class="button button-secondary"
+            >
+              Return Home
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="footer-brand">
+      <span>Liberi Curiosi</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html#philosophy">About</a>
+      <a href="founder.html">Founder</a>
+      <a href="index.html#liberi">Liberi</a>
+      <a href="collegium.html">Collegium</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <p class="copyright">
+      © <span id="year"></span> Liberi Curiosi
+    </p>
+
+  </footer>
+
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html#philosophy">About</a>
+    <a href="founder.html">Founder</a>
+    <a href="index.html#liberi">Liberi</a>
+    <a href="collegium.html">Collegium</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+
+  <script src="script.js"></script>
+
+<script>
+  const waitlistForm =
+    document.getElementById("collegiumWaitlist");
+
+  const waitlistSuccess =
+    document.getElementById("waitlistSuccess");
+
+  if (waitlistForm && waitlistSuccess) {
+
+    waitlistForm.addEventListener(
+      "submit",
+      function() {
+
+        const button =
+          waitlistForm.querySelector(
+            'button[type="submit"]'
+          );
+
+        button.disabled = true;
+        button.textContent = "Joining...";
+
+        setTimeout(function() {
+
+          waitlistForm.reset();
+
+          waitlistForm.style.display =
+            "none";
+
+          waitlistSuccess.hidden =
+            false;
+
+        }, 1200);
+
+      }
+    );
+
+  }
+</script>
+
+</body>
+</html>
