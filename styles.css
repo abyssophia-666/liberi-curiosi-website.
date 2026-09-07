@@ -2045,3 +2045,63 @@ footer {
 
   transform: translateY(-2px);
 }
+
+/* =========================================
+   MOBILE — STACK LIBERI + COLLEGIUM
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  .worlds {
+    display: flex !important;
+    flex-direction: column !important;
+
+    width: 100%;
+    min-height: 0;
+  }
+
+
+  .world-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    min-height: auto !important;
+
+    padding: 70px 28px !important;
+
+    display: block;
+  }
+
+
+  .world-card-content {
+    width: 100% !important;
+    max-width: 650px !important;
+
+    margin: 0 auto;
+  }
+
+
+  .world-card-content p {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* Remove desktop vertical divider */
+
+  .worlds::before,
+  .worlds::after {
+    display: none;
+  }
+
+
+  /* Horizontal divider between Liberi + Collegium */
+
+  .collegium-card {
+    border-top:
+      1px solid
+      rgba(216, 182, 63, .55);
+  }
+
+}
